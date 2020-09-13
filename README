@@ -1,0 +1,191 @@
+DESCRIPTION: 
+The goal of this The goal of this homework is to become familiar with the environment in hoare while practicing system calls. We will be using getopt. The programming task requires you to create a utility to traverse a specified directory in depth first order. Depth-first search explores each branch of a tree to its leaves before looking at other branches. Depth-first search is naturally recursive, as indicated by following pseudocode:
+
+I used Perror to check if directory can be open
+
+depthfirst ( root )
+{
+	for each node at or below root
+	{
+		visit node;
+			if node is a directory
+				depthfirst ( node );
+	}
+}
+
+There are a couple of thing realted to this project.
+
+Bhatia says the following "I'll recommend using the `stat(2)` system call and extract the number of bytes or blocks from the buffer as needed.  You should be able to extract both blocks (st_blocks) and bytes (st_size) from the same buffer." Which I am doing but for some reason my bytes are slightly differnt than that of du
+
+
+Bhatia says to use the book as a suggestion rather than strictly following it. Me and Jared Deihl both gave gave resposibility of printing to another function
+
+
+It is required for this project that you use version control, a Makefile, and a README. Your README file should consist at a minimum of a description of how I should compile and run your project, any outstanding problems that it still has, and any problems you encountered. Your Makefile should use suffix-rules or pattern-rules and have an option to clean up object files.
+
+mydu [-h]
+mydu [-a] [-B M | -b | -m] [-c] [-d N] [-H] [-L] [-s] <dir1> <dir2> ...
+-a Write count for all files, not just directories.
+-B M Scale sizes by M before printing; for example, -BM prints size in units of 1,048,576 bytes.
+-b Print size in bytes.
+-c Print a grand total.
+-d N Print the total for a directory only if it is N or fewer levels below the command line argument.
+-h Print a help message or usage, and exit
+-H Human readable; print size in human readable format, for example, 1K, 234M, 2G.
+-L Dereference all symbolic links. By default, you will not dereference symbolic links.
+-m Same as -B 1048576.
+-s Display only a total for each argument
+
+What doesnt work:
+
+I have not implemented the -bM command where M is a letter, only as a number
+simple fix but do not have anough time
+
+Sometimes It doesnt traverse Links well but last tested it works.
+
+I did not account for commands that shouldnt be used together so it may error.
+
+VERSION CONTROL:
+link: "https://github.com/BrandonLondon/cs4760_project1/commits/master"
+
+==============================================================================Commits on Sep 11, 2020=============================================================================
+-d and finishing touches
+
+@BrandonLondon
+BrandonLondon committed 13 minutes ago
+ 
+====================================================================================Commits on Sep 10, 2020======================================================================
+adding finishing touchs
+
+@BrandonLondon
+BrandonLondon committed 17 hours ago
+ 
+Added -L command
+
+@BrandonLondon
+BrandonLondon committed 18 hours ago
+ 
+added some functions
+
+@BrandonLondon
+BrandonLondon committed 22 hours ago
+ 
+adding -B and -m functionality
+
+@BrandonLondon
+BrandonLondon committed yesterday
+ 
+=====================================================================================Commits on Sep 9, 2020=====================================================================
+Added where it got the path
+
+@BrandonLondon
+BrandonLondon committed 2 days ago
+ 
+added -s command functionality
+
+@BrandonLondon
+BrandonLondon committed 2 days ago
+ 
+added -c command functionality
+
+@BrandonLondon
+BrandonLondon committed 2 days ago
+ 
+added -c command functionality
+
+@BrandonLondon
+BrandonLondon committed 2 days ago
+ 
+Added -H functionality
+
+@BrandonLondon
+BrandonLondon committed 2 days ago
+ 
+This has errors
+
+@BrandonLondon
+BrandonLondon committed 2 days ago
+ 
+Added options
+
+@BrandonLondon
+BrandonLondon committed 2 days ago
+ 
+===========================================================Commits on Sep 8, 2020=======================================================================
+fixed spacing and such
+
+@BrandonLondon
+BrandonLondon committed 3 days ago
+ 
+added new depthsearch function
+
+@BrandonLondon
+BrandonLondon committed 3 days ago
+ 
+added sizefun implentation
+
+@BrandonLondon
+BrandonLondon committed 3 days ago
+ 
+======================================Commits on Sep 7, 2020============================================================================================
+added sizepathfun func
+
+@BrandonLondon
+BrandonLondon committed 4 days ago
+ 
+added -b functionality
+
+@BrandonLondon
+BrandonLondon committed 4 days ago
+ 
+added a bunch of things
+
+@BrandonLondon
+BrandonLondon committed 4 days ago
+ 
+help
+
+@BrandonLondon
+BrandonLondon committed 4 days ago
+ 
+help
+
+@BrandonLondon
+BrandonLondon committed 4 days ago
+ 
+help
+
+@BrandonLondon
+BrandonLondon committed 4 days ago
+ 
+added depthfirstseach
+
+@BrandonLondon
+BrandonLondon committed 4 days ago
+ 
+started adding depthfirstsearch
+
+BrandonLondon
+BrandonLondon committed 4 days ago
+ 
+added getopt and getdirectory
+
+Brandon London
+Brandon London committed 4 days ago
+ 
+==========================================================================Commits on Sep 6, 2020======================================================================
+Some changes to file extensions
+
+@BrandonLondon
+BrandonLondon committed 5 days ago
+ 
+Some changes to file extensions
+
+@BrandonLondon
+BrandonLondon committed 5 days ago
+ 
+===============================================================================Commits on Sep 2, 2020=====================================================================
+Inital commit
+
+Brandon London
+Brandon London committed 9 days ago
